@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Auction</title>
+<meta charset="utf-8">
+<link rel="icon" href="{{url_for('static',filename='playerdetails/images/favicon.ico')}}">
+<link rel="shortcut icon" href="{{url_for('static',filename='playerdetails/images/favicon.ico')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='playerdetails/css/style.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='playerdetails/css/TMGPrototype2.css')}}">
+<script src="{{url_for('static',filename='playerdetails/js/jquery.js')}}"></script>
+<script src="{{url_for('static',filename='playerdetails/js/jquery-migrate-1.1.1.js')}}"></script>
+<script src="{{url_for('static',filename='playerdetails/js/superfish.js')}}"></script>
+<script src="{{url_for('static',filename='playerdetails/js/TMGPrototype2.js')}}"></script>
+<script src="{{url_for('static',filename='playerdetails/js/jquery.equalheights.js')}}"></script>
+<script src="{{url_for('static',filename='playerdetails/js/jquery.easing.1.3.js')}}"></script>
+
+
+<link href="{{url_for('static',filename='team/css/bootstrap.min.css')}}" rel=stylesheet type="text/css"/>
+<link href="{{url_for('static',filename='team/css/font-awesome.min.css')}}" rel=stylesheet type="text/css"/>
+
+
+<script>
+$(window).load(function () {
+    $('#TMGPrototype2').TMGPrototype2({});
+});
+</script>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<link rel="stylesheet" media="screen" href="css/ie.css">
+<![endif]-->
+
+<style type="text/css">
+  
+body a {
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+}
+html, body{
+    font-size: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+  background:#FFFFFF;
+}
+body a:hover {
+    text-decoration: none;
+}
+
+.team-info{
+    position: relative;
+    overflow: hidden; 
+}
+.team-info img{
+  width:100%;
+}
+.team-caption h4{
+    margin:0;
+    color: white;
+    font-family:'Comic Sans MS';
+    font-size: 1.5em;
+    text-transform: uppercase;
+    line-height: 1.8em;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.team-caption p{
+  color: #FFFFFF;
+    font-size: .9em;
+    margin: 0;
+}
+.team-caption ul{
+    padding: 0;
+    margin: 1em 0 0 0;
+}
+.team-caption ul li{
+    display: inline-block;
+}
+.team-caption ul li a {
+  color: #333;
+    text-align: center;
+}
+
+.team-caption ul li a i.fa.fa-rss{
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    border: solid 2px #FFF;
+    background: none;
+    color: #FFF;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+.team-caption ul li a i.fa.fa-rss:hover{
+  background: #800000;
+}
+.team-caption {
+    background: #800000;
+    padding: 1em;font-family:'Nolito';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    -webkit-transition: .5s all;
+    transition: .5s all;
+    -moz-transition: .5s all;
+}
+.team-info:hover .team-caption{
+    background-color: transparent;
+    top: 50%;
+    transform: translate(0%, -50%);
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    bottom: auto;
+}
+.team-info:hover .team-caption h4{
+  color:#800000  ;
+}
+.team-info:before {
+    background-color: rgba(0,0,0,0.85);
+    border: 3px solid #800000;
+    bottom: 0;
+    content: "";
+    display: inline-block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+}
+.team-info:hover:before {
+    opacity: 1;
+}
+
+.details{
+font-family: 'Comic Sans MS';
+}
+.details_right{
+  font-family: 'Garamond';
+  font-size: 25px;
+  padding-left: 10px;
+  
+}
+.p_points{
+  font-size:1.2em;
+      vertical-align:middle;
+
+}
+.p_point{
+  font-size:1.4em;
+        vertical-align:middle;
+
+  
+}
+/*-- //team --*/
+
+@media(max-width:414px){
+  .team-dot{
+    padding: 2em 0;
+  }
+  .agileits-team-grid {
+    float: none;
+    width: 100%;
+  }
+  .agileits-team-grid:nth-child(2){
+    margin:2em 0 0 0;
+  }
+}
+
+.example2 {
+ height: 50px;  
+ overflow: hidden;
+ position: relative;
+ border: solid 2px #8B0000 ;
+ background:rgba(255,255,255,0.5);
+
+}
+.recent{
+  color:#660F0F;
+  font-weight: bold;
+  font-family: 'Times New Roman';
+   font-size:32px;
+
+}
+.example2 h3 {
+font-family: 'Andalus';
+  font-weight: bold;
+ position: absolute;
+ width: 250%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ color:#8B0000  ;
+ font-size:30px;
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%); 
+ transform:translateX(100%);
+ /* Apply animation to this element */  
+ -moz-animation: example2 25s linear infinite;
+ -webkit-animation: example2 25s linear infinite;
+ animation: example2 25s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes example2 {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes example2 {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes example2 {
+ 0%   { 
+ -moz-transform: translateX(30%); /* Firefox bug fix */
+ -webkit-transform: translateX(30%); /* Firefox bug fix */
+ transform: translateX(30%);    
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-100%); 
+ }
+}
+
+
+</style>
+</head>
+<body class="page1">
+
+<div id="TMGPrototype2">
+  <h1><a href="/"><img src="{{url_for('static',filename='playerdetails/images/logo.png')}}" alt=""></a></h1>
+  <ul class='sets'>
+    <li data-setName="Player details">
+      <ul>
+        <li data-srcPreview="{{url_for('static',filename='playerdetails/images/red2.jpg')}}">
+          <div>
+            <div class="content"> <img src="{{url_for('static',filename=detail[4])}}" alt="" height="200" width="200">
+              <h3>{{detail[0]}}</h3>
+              <p></p>
+              <p></p>
+              <ul>
+                <li><span class="details">Name:</span><span class="details_right"> {{detail[1]}} </span></li>
+                <li><span class="details">Branch:</span><span class="details_right">  {{detail[2]}}</li></span>
+                <li><span class="details">Group:</span> <span class="details_right"> {{detail[6]}}</li></span>
+                <li><span class="details">Playing style: </span><span class="details_right">  {{detail[3]}}</li></span>
+              </ul>
+              <p></p>
+              <p></p>
+              <span class="alleft"> <a class="btn" href="/player_sell_form/{{detail[0]}}">SIGN</a></span>
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+
+              <span class="alleft"> <a class="btn" href="/">POSTPONE</a></span></div>
+          </div>
+        </li>
+    </li>
+  </ul>
+</div>
+
+{% if history %}
+
+  <div class="example2">
+  <h3>
+  <span class="recent">RECENT TRANSFERS:&nbsp;&nbsp;&nbsp; </span> 
+  {% for h in history %}
+  {{h[1]}} ( {{h[5]}} > {{h[7]}} ) .&nbsp;&nbsp;&nbsp;
+  {% endfor %}
+  </h3>
+  </div>
+
+  <br><br><br><br>
+
+{% endif %}
+<div class="agileits-team-grids">
+        {% for x in teams %}
+            <div class="col-md-3 agileits-team-grid" style="margin-left: 100px;margin-bottom: 20px;">
+                        <div class="team-info">                      
+
+                            <img src="{{url_for('static',filename=x[3])}}" alt="">
+                            <br><br><br><br>
+                            <div class="team-caption"> 
+                               <a href="/team_details/{{x[0]}}"> <h4>{{x[0]}} </h4></a>
+
+                                <p><span  class="p_points">Points Remaining: <span class="p_point">{{x[2]}}</span></span></p>
+                             
+                               </div>
+                            </div>
+                        </div>
+                    
+
+    {% endfor %}
+
+
+
+          
+          
+          <div class="clearfix"> </div>
+     
+</div>
+
+</body>
+</html>

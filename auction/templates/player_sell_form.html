@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<title>transfer</title>
+	<link href="{{url_for('static',filename='form/css/bootstrap.css')}}" rel="stylesheet">
+	<link href="{{url_for('static',filename='form/css/main.css')}}" rel="stylesheet">
+	<link rel="shortcut icon" href="{{url_for('static',filename='form/images/favicon.png')}}">
+	<script src="{{url_for('static',filename='form/js/pace.js')}}"></script>
+
+	<script>
+function required()
+{
+	var y=0;
+	var TEAM=document.forms["form1"]["TEAM"].value;
+	var PRICE=document.forms["form1"]["PRICE"].value;
+	{% for x in teams %}
+			// Check whether the TEAM name entered is VALID
+			if(TEAM == "{{x[0]}}" ){
+					y=1;
+			}
+	{% endfor %}	
+	if(y==1){	
+		alert("PLAYER SOLD");
+		document.form1.action="http://localhost:5000/player_sold/{{id}}";
+		document.form1.method="post";
+	
+	}
+	else{
+		alert("invalid team name");
+		document.form1.action="";
+	}
+}
+</script>
+</head>
+
+<body>
+	<div class="preloader"></div>
+	
+    <! -- ******************** MASTHEAD SECTION ******************** -->	
+	<main id="top" class="masthead" role="main">
+		<div class="container">
+			<div class="logo"> <a href="/"><img style="opacity: 0.5;" src="{{url_for('static',filename='form/images/epl_logo.jpg')}}" width=130 height=78 alt="logo"></a>
+			</div>
+ 
+			<h1>You die,<strong> you die.</strong> You don't see which is the
+			<br> better way to die.<strong><span style="color:#FF4500"> MS DHONI</span></strong></h1>
+ 
+			<div class="row">
+				<div class="col-md-6 col-sm-12 col-md-offset-3 subscribe">
+					<form class="form-horizontal" name='form1' onsubmit="required()" enctype="multipart/form-data">
+						<div class="form-group">
+							<div class="col-md-6 col-md-offset-3">
+								<input class="form-control input-lg" type='text' name='TEAM' placeholder='TEAM' required>
+							</div>
+
+							<div class="col-md-6 col-md-offset-3">
+							<br><br>
+								<input class="form-control input-lg" type='number' name='PRICE' placeholder="PRICE" required>
+							</div>
+							<div class="col-md-6 col-md-offset-3">
+							<br><br>
+								<button type="submit" name="submit" value="SUBMIT" class="btn btn-success btn-lg">TRANSFER</button>
+							</div>
+						</div>
+					</form>
+					<span id="result" class="alertMsg"></span> </div>
+				</div>
+ 
+		</div><! --/container -->
+	</main><! --/main -->
+ 
+
+   
+
+ 
+
+
+ 
+ 
+ 
+<script src="{{url_for('static',filename='form/js/jquery.js')}}"></script>
+<script src="{{url_for('static',filename='form/js/bootstrap.js')}}"></script>
+<script src="{{url_for('static',filename='form/js/easing.js')}}"></script>
+<script src="{{url_for('static',filename='form/js/nicescroll.js')}}"></script>
+ 
+ 
+
+ 
+</body>
+</html>
